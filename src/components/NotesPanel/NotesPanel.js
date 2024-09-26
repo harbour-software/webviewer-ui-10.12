@@ -64,7 +64,9 @@ const NotesPanel = ({
   const dispatch = useDispatch();
   const [t] = useTranslation();
 
-  const currentWidth = currentLeftPanelWidth || currentNotesPanelWidth;
+  let currentWidth = currentLeftPanelWidth || currentNotesPanelWidth;
+  // Make sure the panel is wide enough for the DatePicker component
+  if (currentWidth < 330) { currentWidth = 330; }
   const isMobile = isMobileSize();
 
   const [multiSelectedAnnotations, setMultiSelectedAnnotations] = useState([]);

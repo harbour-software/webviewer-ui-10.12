@@ -23,6 +23,9 @@ import ReaderModeViewer from 'components/ReaderModeViewer';
 import LazyLoadWrapper, { LazyLoadComponents } from 'components/LazyLoadWrapper';
 import useOnMeasurementToolOrAnnotationSelected from 'hooks/useOnMeasurementToolOrAnnotationSelected';
 import useOnCountMeasurementAnnotationSelected from 'hooks/useOnCountMeasurementAnnotationSelected';
+import PageSliderOverlay from 'components/PageSliderOverlay';
+import PagePreviousOverlay from 'components/PagePreviousOverlay';
+import PageNextOverlay from 'components/PageNextOverlay';
 
 import './DocumentContainer.scss';
 import DataElements from 'src/constants/dataElement';
@@ -360,6 +363,28 @@ class DocumentContainer extends React.PureComponent {
                     isLogoBarEnabled={this.props.isLogoBarEnabled}
                   />
                 )}
+                {showPageNav &&
+                  <PageSliderOverlay
+                    showNavOverlay={this.state.showNavOverlay}
+                    onMouseEnter={this.pageNavOnMouseEnter}
+                    onMouseLeave={this.pageNavOnMouseLeave}
+                  />
+                }
+                {showPageNav &&
+                  <PagePreviousOverlay
+                    showNavOverlay={this.state.showNavOverlay}
+                    onMouseEnter={this.pageNavOnMouseEnter}
+                    onMouseLeave={this.pageNavOnMouseLeave}
+                  />
+                }
+                {showPageNav &&
+                  <PageNextOverlay
+                    showNavOverlay={this.state.showNavOverlay}
+                    onMouseEnter={this.pageNavOnMouseEnter}
+                    onMouseLeave={this.pageNavOnMouseLeave}
+                  />
+                } 
+
 
                 {isMobile && !isInDesktopOnlyMode && <ToolsOverlay />}
               </div>

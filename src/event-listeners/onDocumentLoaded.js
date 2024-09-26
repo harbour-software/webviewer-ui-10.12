@@ -40,6 +40,9 @@ export default (store, documentViewerKey) => async () => {
   });
 
   dispatch(actions.openElement('pageNavOverlay'));
+  dispatch(actions.openElement('pageSliderOverlay'));
+  dispatch(actions.openElement('pagePreviousOverlay'));
+  dispatch(actions.openElement('pageNextOverlay'));
   dispatch(actions.setLoadingProgress(1));
 
   // set timeout so that progress modal can show progress bar properly

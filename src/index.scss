@@ -1,4 +1,5 @@
 @import '../node_modules/@pdftron/webviewer-react-toolkit/dist/css/style.css';
+@import '../node_modules/react-datepicker/dist/react-datepicker.css';
 
 /* Defaults. Remove from here as you override below. */
 //   --color-theme-primary: #00a5e4;
@@ -103,4 +104,11 @@ html[data-theme='dark'] {
   .sb-main-padded.sb-show-main {
     padding: 0;
   }
+}
+
+.react-datepicker-popper {
+  z-index: 96;
+}
+.react-datepicker-wrapper {
+  width: 100%;
 }
